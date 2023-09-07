@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peisia.spring.spb.mapper.GuestMapper">
+	<select id="getList" resultType="com.peisia.spring.spb.domain.GuestVO">
+		SELECT * from ${@com.peisia.spring.spb.tn.TableName@TN} limit #{limitIndex} , 5<!-- #{TableName} -->
+	</select>
+	
+	<select id="getFBList" resultType="com.peisia.spring.spb.domain.GuestVO">
+		SELECT * from ${@com.peisia.spring.spb.tn.TableName@TN} limit #{limitIndex} , 10<!-- #{TableName} -->
+	</select>
+	
+	<select id="read" resultType="com.peisia.spring.spb.domain.GuestVO">
+		select * from ${@com.peisia.spring.spb.tn.TableName@TN} where s_category like #{s_category} and
+		 not s_title is null and s_no = #{s_no}
+	</select>	
+		
+	<delete id="del">
+		delete from ${@com.peisia.spring.spb.tn.TableName@TN} where s_no = #{s_no}
+	</delete>
+		
+	<insert id="write">
+		insert into ${@com.peisia.spring.spb.tn.TableName@TN} (s_text) values (#{s_text})
+	</insert>		
+	
+	<update id="modify">
+		update ${@com.peisia.spring.spb.tn.TableName@TN}
+		set s_text = #{s_text}
+		where s_no = #{s_no}
+	</update>
+	
+	<select id="countPost" resultType="int">
+		SELECT count(*) from ${@com.peisia.spring.spb.tn.TableName@TN}<!-- #{TableName} -->
+	</select>
+	
+
+	<select id="countsearchPost" resultType="int">
+		SELECT count(*) from ${@com.peisia.spring.spb.tn.TableName@TN} where s_category like #{word} and not s_title is null <!-- #{TableName} -->
+	</select>
+	
+	<update id="hitCount">
+		update ${@com.peisia.spring.spb.tn.TableName@TN}
+		set s_hit = (s_hit+1)
+		where s_no = #{s_no}
+	</update>
+	
+</mapper>

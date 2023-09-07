@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+#screen_game_enter {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-flow: row wrap;
+	
+}
+
+/* #screen_game_enter>div, #screen_game_enter>div>div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+/* free board part */
+/* table {
+	width : 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+	background-color:#00cbfe;
+}
+ */
+.container {
+    margin: 0 auto;
+    max-width: calc(100% - 100px);
+    width: 1200px;
+}
+/* .box.feature1 {
+    text-align: center;
+} */
+
+p, ul, ol, dl, table {
+    margin-bottom: 2em;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* free board part version 2 */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+.board_title{
+        position: relative;
+        top:0px;
+        
+    }
+
+.container h2 {
+	    font-size: 2em;
+	    color: white;
+	    text-align: center;
+	    border-bottom: solid 4px #eee;
+	    margin: 2em 0 0 0; 
+	    padding: 0 0 1em 0;
+	}
+
+	ul.divided li:first-child {
+    /* border-top: 0 !important; */
+    padding-top: 3em !important;
+    margin-top: 0 !important;
+	}
+	
+	.big_yy ul.divided li:first-child {
+    /* border-top: 0 !important; */
+    padding-top: 2em !important;
+    margin-top: 0 !important;
+	}
+	ul.divided li {
+    /* border-top: solid 2px #eee; */
+    padding: 0.5em 0 0 0;
+    margin: 1em 0 0 0;
+}
+	
+.container ul.divided li a, .big_yy ul.divided li a{
+    text-decoration: none;
+    color : white;
+    
+}
+      /* .container에 한글 텍스트에 대한 스타일 */
+		.container:lang(ko) {
+            /* font-family: "한글 폰트", sans-serif; 앞쪽 "한글 폰트가" 1번쨰 시도할 폰트고 없으면 뒤에 폰트롤 적용됨*/
+            font-family: "fantasy", sans-serif;
+            font-weight: 800;
+        }
+
+        /* .container에 영어 텍스트에 대한 스타일 */
+        .container:lang(en) {
+            font-family: "fantasy", sans-serif;
+            font-weight: 100;
+            }
+            
+        
+
+.container ul.divided li, #board ul.menu li {
+    border-color: #7e82ff;
+    border-color: #eee;
+}
+
+.writerHit{
+	float: right; 
+	color: white;
+	font-family: sans-serif;  
+	font-weight: 400;
+}
+
+
+
+
+.x {
+	width: 850px;
+	height: 600px;
+	 background-color: gray; 
+	
+}
+
+/* side board controll */
+.big_yy{
+	width:550px; height:600px;
+	display:flex;
+	flex-direction: column;
+	
+	 /* background-color: #e985ff;  */
+}
+.big_yy h2 {
+	 font-size: 1.5em;
+	    color: white;
+	 font-weight: 700;   
+	    border-bottom: solid 4px #eee;
+	    margin: 1em 0 0 0; 
+	    padding: 0 0 1em 0;
+}
+
+.board_side{
+	
+}
+.yy {
+	
+	width: 550px; height: 300px;
+	background-color: red;
+	
+	margin: 0 auto;
+    max-width: calc(100% - 100px);
+}
+
+.start_button{
+	display:flex;
+	width:100px; height:50px;
+	border-radius:10px;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+	
+}
+
+.start_button a {
+	
+	color:white;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* free board part */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+.freeBoard{
+	width: 100%; height: 1200px;
+	background-color: #a3d6ff;
+	display: flex;
+}
+
+#freeBoardbox{
+	width:60%; height: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3em 0 0 0; 
+}
+
+.freeTable{
+	text-align:center;
+	/* border:1px solid #3B3E45; */
+	 width:100%;
+	 line-height: 3;
+	 
+}
+.freeTable tr{
+	border-top: 1px solid #000;
+}
+
+.freeTable tbody:first-child tr:first-child{
+	border: none;
+}
+#tableName{
+	
+}
+
+.list_selector{
+	width: 100%; height:3em;
+	margin:0 0 1em 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+#tableName h2{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 3em;
+	    color: white;
+	 font-weight: 800;  
+}
+
+.pageSelect{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1em;
+		border-radius: 5px;
+	width: 80px;
+}
+
+.paging_block{
+	margin:0 0 0 50%;
+	background-color: #61ffc8;
+	 display : inline-block; 
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* board_read part */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+.read_area{
+	width:90%; height:1200px;
+	background-color: #ff756b;
+}
+
+.right_area{
+ 	display: flex;
+	justify-content: center; 
+	align-items: center;
+    background-color: white;
+    width:100%; height: 70px;
+	positon : relative;
+	
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+
+.right_area>div.rac{
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	margin:0 10px 0 0;
+	width:75px; height: 40px;
+	border-radius: 10px;
+	background-color: #f2c7ff;
+}
+
+.rac p { /* p에 대한 기본값 조정 */
+    text-align: center;
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
