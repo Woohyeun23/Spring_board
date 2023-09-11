@@ -47,7 +47,7 @@
 						<c:forEach var="guest" items="${FBlist}">
 						<tr>
 							<th>${guest.s_no }</th>
-							<th><a href="${cp}/board/board_read?no=${guest.s_no }&hit=ok">${guest.s_title }</a></th>
+							<th><a href="${cp}/board/board_read?s_no=${guest.s_no }&s_category=${guest.s_category }&hit=ok">${guest.s_title }</a></th>
 							<th>${guest.s_id }</th>
 							<th>${guest.s_hit }</th>
 							<th>${guest.s_datetime }</th>

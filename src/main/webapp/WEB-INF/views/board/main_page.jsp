@@ -29,7 +29,7 @@
 			</div>
 			<ul class="divided">
 				<c:forEach var="guest" items="${list}">
-					<li><a href="${cp}/board/board_read?s_no=${guest.s_no }&hit=ok">${guest.s_title }</a><span class="writerHit"> (조회 : ${guest.s_hit })   ${guest.s_datetime }</span></li>
+					<li><a href="${cp}/board/board_read?s_no=${guest.s_no }&s_category=${guest.s_category }&hit=ok">${guest.s_title }</a><span class="writerHit"> (조회 : ${guest.s_hit })   ${guest.s_datetime }</span></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -40,7 +40,7 @@
 			</div>
 			<ul class="divided">
 				<c:forEach var="guest" items="${list}">
-					<li><a href="${cp}/board/board_read?s_no=${guest.s_no }&hit=ok">${guest.s_title }</a><span class="writerHit"> (조회 : ${guest.s_hit })   ${guest.s_datetime }</span></li>
+					<li><a href="${cp}/board/board_read?s_no=${guest.s_no }&s_category=${guest.s_category }&hit=ok">${guest.s_title }</a><span class="writerHit"> (조회 : ${guest.s_hit })   ${guest.s_datetime }</span></li>
 				</c:forEach>
 			</ul>
 		</div>

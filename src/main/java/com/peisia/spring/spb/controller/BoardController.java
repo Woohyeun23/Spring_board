@@ -7,11 +7,13 @@ import java.net.URISyntaxException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.peisia.spring.spb.boardproc.Bd;
+import com.peisia.spring.spb.domain.GuestVO;
 import com.peisia.spring.spb.domain.ReadVO;
 import com.peisia.spring.spb.kw.KWeatherVo;
 import com.peisia.spring.spb.service.GuestService;
@@ -130,6 +132,31 @@ public class BoardController {
 		
 		model.addAttribute("read",service.read(rv));
 	}
+	
+	@PostMapping("/board_write")//아래와 매핑받는 방식이 다름
+	public String write(GuestVO gvo) {
+		service.write(gvo);
+		return "redirect:/board/getList";	// 책 p.245 참고
+	}
+	
+	@GetMapping("/board_write")	// 책 p.239 /write 중복이지만 이건 글쓰기 화면을 위한 url 매핑
+	public void board_write() {
+		
+	}
+	
+	@GetMapping("/board_del")
+	public String del(@RequestParam("s_no") long s_no,
+			@RequestParam(value="s_category", defaultValue="free") String s_category ) {
+		log.info("컨트롤러 ==== 글번호 ==============="+s_no);
+		log.info("컨트롤러 ==== 글이 있는 카테고리 ==============="+s_category);
+		service.del(s_no);
+		return "redirect:/board/free_board?category="+s_category;	// 책 p.245 참고
+	}
+	
+	
+	
+	
+	
 	
 	@GetMapping("/login")
 		public void login() {
