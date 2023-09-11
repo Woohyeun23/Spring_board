@@ -120,14 +120,14 @@ public class BoardController {
 	
 	
 	@GetMapping({"/board_read", "/board_modify"})
-	public void board_read(ReadVO rv, @RequestParam("hit") String hit, 
+	public void board_read(ReadVO rv, @RequestParam(value="hit", defaultValue="no_count") String hit, 
 			 Model model) {
 		log.info("컨트롤러 ==== 글번호 ==============="+rv.getS_no());
 		log.info("컨트롤러 ==== 글번호 ==============="+rv.getS_category());
 		
-//		if(hit.equals("hit")) {
-//			service.hitCount(rv.getS_no());
-//		}
+		if(hit.equals("ok")) {
+			service.hitCount(rv.getS_no());
+		}
 		
 		
 		model.addAttribute("read",service.read(rv));
@@ -135,6 +135,7 @@ public class BoardController {
 	
 	@PostMapping("/board_write")//아래와 매핑받는 방식이 다름
 	public String write(GuestVO gvo) {
+		
 		service.write(gvo);
 		return "redirect:/board/getList";	// 책 p.245 참고
 	}
@@ -154,7 +155,11 @@ public class BoardController {
 	}
 	
 	
-	
+	@PostMapping("/board_modify")
+	public String modify(GuestVO gvo) {
+		service.modify(gvo);
+		return "redirect:/board/free_board?category="+gvo.getS_category();
+	}
 	
 	
 	
