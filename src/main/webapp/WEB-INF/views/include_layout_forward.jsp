@@ -12,10 +12,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>peisia.com</title>
     <!-- 3. 적용하기 -->    
-    <link rel="stylesheet" href="${cp}/resources/site/css/reset.css?ver=<%=System.currentTimeMillis()%>">
-    <link rel="stylesheet" href="${cp}/resources/site/css/index.css?ver=<%=System.currentTimeMillis()%>">
+    
+    <link rel="stylesheet" type="text/css" href="${cp}/resources/site/css/reset.css?ver=<%=System.currentTimeMillis()%>">
+    <link rel="stylesheet" type="text/css" href="${cp}/resources/site/css/index.css?ver=<%=System.currentTimeMillis()%>">
+  
+	<script type="text/javascript" src="${cp}/resources/site/js/index.js?ver=<%=System.currentTimeMillis()%>"></script>
 	<script src="${cp }/resources/site/js/mainFont.js?ver=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
@@ -36,38 +40,30 @@ if(session_id!=null){
 
 %>            	
                 <%=session_id%> 님 
-                 &nbsp;|&nbsp;
-                <a href="ServletProcLogout"><input type="button" value="로그아웃"></a>                
-                 &nbsp;|&nbsp;
+                <div class="nav2_menu"><a href="ServletProcLogout"><input type="button" value="로그아웃"></a>     </div>           
 <%
 }else{
 %>                            
                 <!-- 로그인 영역 -->
-                <a href="${cp}/board/login">로그인</a>
-                 &nbsp;|&nbsp;
-                <a href="${cp}/board/new_member">회원가입</a>
-                 &nbsp;|&nbsp;
+                <div class="nav2_menu"><a href="${cp}/board/login">로그인</a></div>
+                <div class="nav2_menu"><a href="${cp}/board/new_member">회원가입</a></div>
 <%
 }
 %>           
                 
-                <a href="#">Dice</a>
-                &nbsp;|&nbsp;
-                <a href="#">고객센터</a>
+                <div class="nav2_menu"><a href="#">Dice</a></div>
+                <div class="nav2_menu"><a href="#">고객센터</a></div>
             </div>  
             <div id="main_banner">
             	<a href="${cp}/board/main_page" class="mainfont">
             	<h1>String Board</h1>
 				</a>
             </div>
-            <div id="nav">            
-                <a href="${cp}/board/free_board">자유 게시판</a>
-                &nbsp;|&nbsp;
-                <a href="#">영상게시판</a>
-                &nbsp;|&nbsp;
-                <a href="#">패치노트</a>
-                &nbsp;|&nbsp;
-                <a href="#">하고싶은 말</a>
+            <div id="nav">      
+            	<div class="nav_menu"><a href="${cp}/board/free_board">자유 게시판</a></div>      
+                <div class="nav_menu"><a href="#">영상게시판</a></div>
+                <div class="nav_menu"><a href="#">패치노트</a></div>
+                <div class="nav_menu"><a href="#">하고싶은 말</a></div>
             </div>    
         </div>
         <!-- ************************************************ -->

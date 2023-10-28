@@ -21,7 +21,7 @@
 	</delete>
 		
 	<insert id="write">
-		insert into ${@com.peisia.spring.spb.tn.TableName@TN} (s_text) values (#{s_text})
+		insert into ${@com.peisia.spring.spb.tn.TableName@TN} (s_title, s_text) values (#{s_title}, #{s_text})
 	</insert>		
 	
 	<update id="modify">

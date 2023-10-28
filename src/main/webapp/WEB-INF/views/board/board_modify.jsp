@@ -12,19 +12,24 @@
 <div class="freeBoard">
 <%@include file="../include_layout_left.jsp" %>
 
+
 <div class="read_area">
 
 <section id="read_main">
-<form action="/board/board_modify" method="post">
-		<input type="hidden" name='s_no' value='${read.s_no }' >
-		<input class="modify_blank" name="s_title" value="${read.s_title }">
-		<textarea name='s_text'>
-			${read.s_text }
-		</textarea>
-		<input type="submit" value="수정하기">
-	</form>
+<div class="read_title">
+글 제목 : <input name="s_title" value="${read.s_title}">
+</div>
+<div class="article_container">
+<textarea rows="" cols="">
+${read.s_text }
+</textarea>
+</div>
+<div class="right_area">
+<button type=submit>수정</button>
+</div>
 </section>
 </div>
+		
 </div>
 
 <%@include file="../include_layout_back.jsp"%>
